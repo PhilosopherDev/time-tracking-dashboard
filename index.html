@@ -3,38 +3,44 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
-
-  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500&display=swap" rel="stylesheet">
+  <!-- <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png"> -->
   <title>Frontend Mentor | Time tracking dashboard</title>
 </head>
 <body>
   <template id="time-tracking-user">
     <div class="user">
-      <h1>User</h1>
+      <div class="user__description">
+        <img src="" alt="jeremy">
+        <div class="user__purpose">Report for</div>
+        <div class="user__name">Jeremy Robson</div>
+      </div>
+      <div class="user__period">
+        <div class="btn selected">Daily</div>
+        <div class="btn">Weekly</div>
+        <div class="btn">Monthly</div>
+      </div>
     </div>
   </template>
   <template id="time-tracking-card">
-    <div class="card">
-      <h1>Card</h1>
-    </div>
-  </template>
-  <template id="time-tracking-section">
-    <div class="section">
-      <div class="section__user" data-component="user"></div>
-      <div class="section__card" data-component="card"></div>
-    </div>
+    <div class="card"></div>
   </template>
   <template id="time-tracking-container">
     <div class="container">
       <div class="header"></div>
-      <div class="content" data-component="content"></div>
+      <div class="content" data-component="content">
+        <div class="content__user" data-component="user"></div>
+        <div class="content__card" data-component="card"></div>
+      </div>
       <div class="footer">
         Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
         Coded by <a href="#">BYUNGMIN CHOI</a>.
       </div>
     </div>
   </template>
-  <div id="root" class="main" role="main">
+  <div id="root" role="main">
       <div data-component="app"></div>
   </div>  
 </body>
