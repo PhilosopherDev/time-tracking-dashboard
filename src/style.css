@@ -97,11 +97,12 @@ table {
   height: 70%;
   padding: 20px;
   border-radius: 1rem;
-  background-color: hsl(246, 80%, 60%)
+  background-color: hsl(246, 80%, 60%);  
 }
 
 .user__purpose {
   font-size: 0.8rem;
+  margin-bottom: 10px;
 }
 
 .user__name {
