@@ -1,6 +1,6 @@
-import view from "./view/view";
-import css from "../styles/style.css";
-import data from "./model/data.json"
+import view from "./view";
+import data from "./data.json"
+import css from "./style.css";
 
 const state = {
     data,
