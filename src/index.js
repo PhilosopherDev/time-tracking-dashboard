@@ -1,23 +1,15 @@
-
-function readTextFile(file, callback, variable) {
-    var rawFile = new XMLHttpRequest();
-    rawFile.overrideMimeType("application/json");
-    rawFile.open("GET", file, true);
-    rawFile.onreadystatechange = function() {
-        if (rawFile.readyState === 4 && rawFile.status == "200") {
-            callback(rawFile.responseText, variable);
-        }
-    }
-    rawFile.send('string');
-}
+import view from "./view/view";
+import css from "../styles/style.css";
+import data from "./model/data.json"
 
 const state = {
-    data: [],
+    data,
     currentFilter: "Daily"
 }
 
-readTextFile("/src/model/data.json", function(text, variable){
-    var data = JSON.parse(text);
-    variable.push(...data);
-    console.log(state);
-}, state.data);
+const main = document.querySelector("#root");
+
+window.requestAnimationFrame(() => {
+    const newMain = view(main, state);
+    main.replaceWith(newMain);
+});
