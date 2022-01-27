@@ -124,15 +124,18 @@ table {
 .btn {
   display: inline;
   padding-left: 20px;
-  font-size: 0.8rem;
+  font-size: 0.8rem;  
+}
+
+.btn span {
   cursor: pointer;
 }
 
-.btn:hover {
+.btn span:hover {
   color: white;
 }
 
-.selected {
+.btn_selected {
   color: white;
 }
 
