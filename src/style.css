@@ -65,7 +65,7 @@ table {
 /* content */ 
 
 .content {
-  height: 22rem;
+  height: 28rem;
   display: flex;
   flex-direction: row;
   color: white;
@@ -73,16 +73,29 @@ table {
 }
 
 .content__user {
-  width: 14rem;
+  width: 16rem;
   height: 100%;
   margin-right: 1rem;
+}
+
+.content__card {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  max-width: 50rem;
+  height: 100%;
+  gap: 1rem;
 }
 
 /* user */
 
 .user {
+  min-width: 16rem;
   height: 100%;  
   font-weight: 300;
+  display: flex;
+  flex-direction: column;
+  overflow-x: auto;
 }
 
 .user img {
@@ -94,7 +107,7 @@ table {
 }
 
 .user__description {
-  height: 70%;
+  flex: 10 1 auto;
   padding: 20px;
   border-radius: 1rem;
   background-color: hsl(246, 80%, 60%);  
@@ -110,7 +123,7 @@ table {
 }
 
 .user__period {
-  height: 30%;
+  flex: 9 1 auto;
   color: hsl(235, 45%, 61%);
   border-radius: 1rem;
   background-color: hsl(235, 46%, 20%);
@@ -137,6 +150,62 @@ table {
 
 .btn_selected {
   color: white;
+}
+
+/* card */
+
+.card {
+  width: 16rem;
+  height: 13.5rem;
+  
+}
+
+.card .mark {
+  border-top-left-radius: 0.5rem;
+  border-top-right-radius: 0.5rem;
+  height: 2.5rem;
+  
+}
+
+.mark img {
+  float: right;
+  margin-right: 10px;
+  margin-top: -10px;
+}
+
+.card__description {
+  height: calc(100% - 2.5rem + 10px);
+  margin-top: -10px;
+  border-radius: 1rem;
+  background-color: hsl(235, 46%, 20%);
+}
+
+.card:nth-child(1) .mark {
+  background: hsl(15, 100%, 70%);
+}
+
+.card:nth-child(2) .mark {
+  background: hsl(195, 74%, 62%);
+}
+
+.card:nth-child(3) .mark {
+  background: hsl(348, 100%, 68%);
+}
+
+.card:nth-child(4) .mark {
+  background: hsl(145, 58%, 55%);
+}
+
+.card:nth-child(5) .mark {
+  background: hsl(264, 64%, 52%);
+}
+
+.card:nth-child(6) .mark {
+  background: hsl(43, 84%, 65%);
+}
+
+.card .instruction {
+
 }
 
 /* footer */
