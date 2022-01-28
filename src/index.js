@@ -4,7 +4,7 @@ import css from "./style.css";
 
 const state = {
     data,
-    currentFilter: "Daily"
+    currentFilter: "weekly"
 }
 
 const main = document.querySelector("#root");
