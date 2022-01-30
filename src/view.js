@@ -47,11 +47,11 @@ function makeCard(node, state) {
 
         const timeframeEl = document.createElement("div");
         timeframeEl.innerText = `${item["timeframes"][state.currentFilter].current}hrs`;
-        clone.querySelector('.timeframe').appendChild(timeframeEl);
+        clone.querySelector('.this-week').appendChild(timeframeEl);
         
         const historyEl = document.createElement("div");
         historyEl.innerText = `Last ${getPeriod(state.currentFilter)} - ${item["timeframes"][state.currentFilter].previous}hrs`;
-        clone.querySelector('.history').appendChild(historyEl);
+        clone.querySelector('.last-week').appendChild(historyEl);
 
         node.appendChild(clone);
     });
