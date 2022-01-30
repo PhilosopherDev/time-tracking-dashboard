@@ -11,10 +11,12 @@
 <body>
   <template id="time-tracking-user">
     <div class="user">
-      <div class="user__description">
+      <div class="user__title">
         <img src="" alt="jeremy">
-        <div class="user__purpose">Report for</div>
-        <div class="user__name">Jeremy Robson</div>
+        <div class="user__description">
+          <div class="user__purpose">Report for</div>
+          <div class="user__name">Jeremy Robson</div>
+        </div>
       </div>
       <div class="user__period">
         <div class="btn"><span>Daily</span></div>
@@ -26,13 +28,15 @@
   <template id="time-tracking-card">
     <div class="card">
       <div class="mark"></div>
-      <div class="card__description">
+      <div class="card__body">
         <div class="instruction">
           <div class="instruction__title"></div>
           <div class="instruction__ellipsis"></div>
         </div>
-        <div class="timeframe"></div>
-        <div class="history"></div>
+        <div class="time">
+          <div class="this-week"></div>
+          <div class="last-week"></div>
+        </div>
       </div>
     </div>
   </template>
