@@ -1,25 +1,14 @@
-import jeremy from '../images/image-jeremy.png';
-import ellipsis from '../images/icon-ellipsis.svg';
-import work from "../images/icon-work.svg";
-import study from "../images/icon-study.svg";
-import social from "../images/icon-social.svg";
-import selfCare from "../images/icon-self-care.svg";
-import play from "../images/icon-play.svg";
-import exercise from "../images/icon-exercise.svg";
-
-const svgArr = [work, play, study, exercise, social, selfCare];
-
-export default (node, state) => {
+export default (node, state, img) => {
     const template = document.querySelector("#time-tracking-container");
     const clone = template.content.firstElementChild.cloneNode(true)
 
-    makeUser(clone.querySelector(".content__user"), state);
-    makeCard(clone.querySelector(".content__card"), state);
+    makeUser(clone.querySelector(".content__user"), state, img);
+    makeCard(clone.querySelector(".content__card"), state, img);
 
     return node.appendChild(clone);
 }
 
-function makeUser(node) {
+function makeUser(node, state, { jeremy }) {
     const template = document.querySelector("#time-tracking-user");
     const clone = template.content.firstElementChild.cloneNode(true);
     clone.querySelector('img').setAttribute("src", jeremy);
@@ -28,13 +17,13 @@ function makeUser(node) {
 
 }
 
-function makeCard(node, state) {
+function makeCard(node, state, {ellipsis, svg}) {
     const template = document.querySelector("#time-tracking-card");
     state.data.forEach((item, idx) => {
         const clone = template.content.firstElementChild.cloneNode(true)
         
         const markEl = document.createElement("img");
-        markEl.setAttribute("src", svgArr[idx]);
+        markEl.setAttribute("src", svg[idx]);
         clone.querySelector(".mark").appendChild(markEl);
 
         const titleEl = document.createElement("h1")
