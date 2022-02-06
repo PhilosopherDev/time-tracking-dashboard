@@ -9,51 +9,32 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _images_image_jeremy_png__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(2);
-/* harmony import */ var _images_icon_ellipsis_svg__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(3);
-/* harmony import */ var _images_icon_work_svg__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(4);
-/* harmony import */ var _images_icon_study_svg__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(5);
-/* harmony import */ var _images_icon_social_svg__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(6);
-/* harmony import */ var _images_icon_self_care_svg__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(7);
-/* harmony import */ var _images_icon_play_svg__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(8);
-/* harmony import */ var _images_icon_exercise_svg__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(9);
-
-
-
-
-
-
-
-
-
-const svgArr = [_images_icon_work_svg__WEBPACK_IMPORTED_MODULE_2__["default"], _images_icon_play_svg__WEBPACK_IMPORTED_MODULE_6__["default"], _images_icon_study_svg__WEBPACK_IMPORTED_MODULE_3__["default"], _images_icon_exercise_svg__WEBPACK_IMPORTED_MODULE_7__["default"], _images_icon_social_svg__WEBPACK_IMPORTED_MODULE_4__["default"], _images_icon_self_care_svg__WEBPACK_IMPORTED_MODULE_5__["default"]];
-
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ((node, state) => {
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ((node, state, img) => {
     const template = document.querySelector("#time-tracking-container");
     const clone = template.content.firstElementChild.cloneNode(true)
 
-    makeUser(clone.querySelector(".content__user"), state);
-    makeCard(clone.querySelector(".content__card"), state);
+    makeUser(clone.querySelector(".content__user"), state, img);
+    makeCard(clone.querySelector(".content__card"), state, img);
 
     return node.appendChild(clone);
 });
 
-function makeUser(node) {
+function makeUser(node, state, { jeremy }) {
     const template = document.querySelector("#time-tracking-user");
     const clone = template.content.firstElementChild.cloneNode(true);
-    clone.querySelector('img').setAttribute("src", _images_image_jeremy_png__WEBPACK_IMPORTED_MODULE_0__["default"]);
+    clone.querySelector('img').setAttribute("src", jeremy);
 
     node.appendChild(clone);
 
 }
 
-function makeCard(node, state) {
+function makeCard(node, state, {ellipsis, svg}) {
     const template = document.querySelector("#time-tracking-card");
     state.data.forEach((item, idx) => {
         const clone = template.content.firstElementChild.cloneNode(true)
         
         const markEl = document.createElement("img");
-        markEl.setAttribute("src", svgArr[idx]);
+        markEl.setAttribute("src", svg[idx]);
         clone.querySelector(".mark").appendChild(markEl);
 
         const titleEl = document.createElement("h1")
@@ -61,7 +42,7 @@ function makeCard(node, state) {
         clone.querySelector('.instruction__title').appendChild(titleEl);
 
         const ellipsisEl = document.createElement("img");
-        ellipsisEl.setAttribute("src", _images_icon_ellipsis_svg__WEBPACK_IMPORTED_MODULE_1__["default"]);
+        ellipsisEl.setAttribute("src", ellipsis);
         clone.querySelector('.instruction__ellipsis').appendChild(ellipsisEl);
 
         const timeframeEl = document.createElement("div");
@@ -88,13 +69,9 @@ function getPeriod(currentFilter) {
 
 /***/ }),
 /* 2 */
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+/***/ ((module) => {
 
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + "71cd41f11bee24c1ded32c00b09baa02.png");
+module.exports = JSON.parse('[{"title":"Work","timeframes":{"daily":{"current":5,"previous":7},"weekly":{"current":32,"previous":36},"monthly":{"current":103,"previous":128}}},{"title":"Play","timeframes":{"daily":{"current":1,"previous":2},"weekly":{"current":10,"previous":8},"monthly":{"current":23,"previous":29}}},{"title":"Study","timeframes":{"daily":{"current":0,"previous":1},"weekly":{"current":4,"previous":7},"monthly":{"current":13,"previous":19}}},{"title":"Exercise","timeframes":{"daily":{"current":1,"previous":1},"weekly":{"current":4,"previous":5},"monthly":{"current":11,"previous":18}}},{"title":"Social","timeframes":{"daily":{"current":1,"previous":3},"weekly":{"current":5,"previous":10},"monthly":{"current":21,"previous":23}}},{"title":"Self Care","timeframes":{"daily":{"current":0,"previous":1},"weekly":{"current":2,"previous":2},"monthly":{"current":7,"previous":11}}}]');
 
 /***/ }),
 /* 3 */
@@ -104,7 +81,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + "a57a4ac863593bb69d31b4399823f745.svg");
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + "71cd41f11bee24c1ded32c00b09baa02.png");
 
 /***/ }),
 /* 4 */
@@ -114,7 +91,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + "a3f124e593ab45ba795f6a068fe710ce.svg");
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + "a57a4ac863593bb69d31b4399823f745.svg");
 
 /***/ }),
 /* 5 */
@@ -124,7 +101,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + "1f0a65e457bfa63988275be35e86407e.svg");
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + "a3f124e593ab45ba795f6a068fe710ce.svg");
 
 /***/ }),
 /* 6 */
@@ -134,7 +111,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + "64be0c18d185740e487b8efaebb31183.svg");
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + "1f0a65e457bfa63988275be35e86407e.svg");
 
 /***/ }),
 /* 7 */
@@ -144,7 +121,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + "a161aff589038fc7ce09296497d4cd62.svg");
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + "64be0c18d185740e487b8efaebb31183.svg");
 
 /***/ }),
 /* 8 */
@@ -154,7 +131,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + "e8d4e5699b0e441f8baf9e7692e15167.svg");
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + "a161aff589038fc7ce09296497d4cd62.svg");
 
 /***/ }),
 /* 9 */
@@ -164,13 +141,17 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + "3e7b028289414a13231843557ae074f7.svg");
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + "e8d4e5699b0e441f8baf9e7692e15167.svg");
 
 /***/ }),
 /* 10 */
-/***/ ((module) => {
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-module.exports = JSON.parse('[{"title":"Work","timeframes":{"daily":{"current":5,"previous":7},"weekly":{"current":32,"previous":36},"monthly":{"current":103,"previous":128}}},{"title":"Play","timeframes":{"daily":{"current":1,"previous":2},"weekly":{"current":10,"previous":8},"monthly":{"current":23,"previous":29}}},{"title":"Study","timeframes":{"daily":{"current":0,"previous":1},"weekly":{"current":4,"previous":7},"monthly":{"current":13,"previous":19}}},{"title":"Exercise","timeframes":{"daily":{"current":1,"previous":1},"weekly":{"current":4,"previous":5},"monthly":{"current":11,"previous":18}}},{"title":"Social","timeframes":{"daily":{"current":1,"previous":3},"weekly":{"current":5,"previous":10},"monthly":{"current":21,"previous":23}}},{"title":"Self Care","timeframes":{"daily":{"current":0,"previous":1},"weekly":{"current":2,"previous":2},"monthly":{"current":7,"previous":11}}}]');
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + "3e7b028289414a13231843557ae074f7.svg");
 
 /***/ }),
 /* 11 */
@@ -749,11 +730,34 @@ var __webpack_exports__ = {};
 (() => {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _view__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(1);
-/* harmony import */ var _data_json__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(10);
-/* harmony import */ var _style_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(11);
+/* harmony import */ var _data_json__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(2);
+/* harmony import */ var _images_image_jeremy_png__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(3);
+/* harmony import */ var _images_icon_ellipsis_svg__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(4);
+/* harmony import */ var _images_icon_work_svg__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(5);
+/* harmony import */ var _images_icon_study_svg__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(6);
+/* harmony import */ var _images_icon_social_svg__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(7);
+/* harmony import */ var _images_icon_self_care_svg__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(8);
+/* harmony import */ var _images_icon_play_svg__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(9);
+/* harmony import */ var _images_icon_exercise_svg__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(10);
+/* harmony import */ var _style_css__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(11);
 
 
 
+
+
+
+
+
+
+
+
+
+
+const imagePath = {
+    jeremy: _images_image_jeremy_png__WEBPACK_IMPORTED_MODULE_2__["default"],
+    ellipsis: _images_icon_ellipsis_svg__WEBPACK_IMPORTED_MODULE_3__["default"],
+    svg: [_images_icon_work_svg__WEBPACK_IMPORTED_MODULE_4__["default"], _images_icon_play_svg__WEBPACK_IMPORTED_MODULE_8__["default"], _images_icon_study_svg__WEBPACK_IMPORTED_MODULE_5__["default"], _images_icon_exercise_svg__WEBPACK_IMPORTED_MODULE_9__["default"], _images_icon_social_svg__WEBPACK_IMPORTED_MODULE_6__["default"], _images_icon_self_care_svg__WEBPACK_IMPORTED_MODULE_7__["default"]]
+}
 
 const state = {
     data: _data_json__WEBPACK_IMPORTED_MODULE_1__,
@@ -763,7 +767,7 @@ const state = {
 const main = document.querySelector("#root");
 
 window.requestAnimationFrame(() => {
-    const newMain = (0,_view__WEBPACK_IMPORTED_MODULE_0__["default"])(main, state);
+    const newMain = (0,_view__WEBPACK_IMPORTED_MODULE_0__["default"])(main, state, imagePath);
     main.replaceWith(newMain);
 });
 })();
